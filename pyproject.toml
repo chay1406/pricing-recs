@@ -1,0 +1,11 @@
+[[build-system]]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pricing-recs"
+version = "0.1.0"
+description = "Pricing recommendation system skeleton"
+
+[tool.black]
+line-length = 88
