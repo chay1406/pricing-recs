@@ -1,0 +1,10 @@
+bu_id: default
+input_table: /path/to/orders
+output_table_line: /path/to/price_recs_line
+output_table_deal: /path/to/price_recs_deal
+execution_mode: pandas
+train_window: "2021-01-01 to 2022-12-31"
+features:
+  include_pseudo_deal_context: true
+model:
+  type: point
