@@ -1,0 +1,11 @@
+# Example configuration for BU1
+bu_id: BU1
+input_table: /mnt/etl/orders_bu1
+output_table_line: /mnt/etl/price_recs_line_bu1
+output_table_deal: /mnt/etl/price_recs_deal_bu1
+execution_mode: spark
+train_window: "2022-01-01 to 2023-12-31"
+features:
+  include_pseudo_deal_context: true
+model:
+  type: point
