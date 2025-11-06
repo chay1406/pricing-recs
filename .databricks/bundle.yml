@@ -1,0 +1,30 @@
+bundle:
+  name: pricing-recs
+
+resources:
+  jobs:
+    pricing-recs-dev:
+      name: "Pricing Recs Dev Job"
+      tasks:
+        - task_key: train_point_model
+          description: "Train line‑level point model for default BU"
+          notebook_path: "/Repos/pricing-recs/notebooks/10_train_point.py"
+          cluster:
+            new_cluster:
+              spark_version: 13.3.x-scala2.12
+              node_type_id: "i3.xlarge"
+              autoscale:
+                min_workers: 1
+                max_workers: 2
+      schedule:
+        cron: "0 0 * * *"
+        timezone_id: "UTC"
+      tags:
+        - dev
+
+targets:
+  dev:
+    workspace:
+      host: https://your-databricks-host
+      root_path: /Repos/pricing-recs
+    default_task_retries: 1
