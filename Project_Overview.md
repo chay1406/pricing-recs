@@ -1,5 +1,3 @@
----
-
 # Price Desk AI – Problem Overview, Objectives, Scenarios, and Phased Plan
 
 ## 1. Business Problem & Context
